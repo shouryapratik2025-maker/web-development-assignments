@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5 Cybersecurity Habits — TechMuse</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="post-hero">
+    <div class="container">
+      <div class="card-meta" style="margin-bottom:12px;"><span class="tag">Security</span></div>
+      <h1>5 Cybersecurity Habits Everyone Should Practice</h1>
+      <div class="post-meta">
+        <span>&#128100; Alex Kumar</span>
+        <span>&#128197; Apr 5, 2025</span>
+        <span>&#128337; 5 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-content animate-in">
+      <img src="images/pic10.jpg" alt="Digital security concept"/>
+
+      <p>
+        You don't need to be a security expert to protect yourself online. Most successful
+        cyberattacks succeed because of simple, preventable mistakes. Here are five habits
+        that make a meaningful difference.
+      </p>
+
+      <h2>1. Use a Password Manager</h2>
+      <p>
+        Reusing passwords is the single biggest mistake most people make. If one site gets hacked,
+        attackers try your password on every other site — this is called credential stuffing.
+        A password manager (Bitwarden, 1Password, etc.) generates and stores unique, complex
+        passwords for every site so you only remember one master password.
+      </p>
+
+      <h2>2. Enable Two-Factor Authentication (2FA)</h2>
+      <p>
+        2FA adds a second layer: even if someone steals your password, they can't log in without
+        the second factor (usually a code from your phone). Enable it on your email, bank, and
+        any account that offers it. App-based authenticators (Google Authenticator, Authy) are
+        more secure than SMS codes.
+      </p>
+
+      <blockquote>
+        "Enabling 2FA on your email account is the single most impactful security action most people can take."
+      </blockquote>
+
+      <h2>3. Keep Software Updated</h2>
+      <p>
+        Most major breaches exploit known vulnerabilities in outdated software. When your OS or
+        browser prompts an update, that update almost certainly contains security patches.
+        Enable automatic updates for your operating system, browser, and any critical apps.
+      </p>
+
+      <h2>4. Be Sceptical of Links and Attachments</h2>
+      <p>
+        Phishing — tricking you into clicking a malicious link — is behind a huge proportion of
+        security incidents. Before clicking any link in an email or message: hover over it to
+        see the real URL, check for subtle misspellings in the domain name, and ask yourself
+        whether you were expecting this message.
+      </p>
+
+      <h2>5. Back Up Your Data Regularly</h2>
+      <p>
+        Ransomware attacks encrypt your files and demand payment for the key. Your best defence
+        is a backup that attackers can't reach. Follow the 3-2-1 rule: 3 copies of your data,
+        on 2 different media types, with 1 stored offsite (or in the cloud).
+      </p>
+
+      <div style="margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border-color); display:flex; gap:12px;">
+        <a href="post3.html" class="btn" style="background:#e8f4fd; color:var(--accent-color);">&#8592; Previous Post</a>
+        <a href="post5.html" class="btn">Next Post &#8594;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>TechMuse</h4><p style="color:#a0afc0; font-size:0.88rem;">CS106 Blog Assignment.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p></div>
+    </div>
+  </footer>
+  <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }</script>
+</body>
+</html>

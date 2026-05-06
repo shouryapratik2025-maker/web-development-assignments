@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Solar System | Planets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <h1 class="site-title">&#9733; The Solar System</h1>
+    <p class="site-subtitle">
+      A Student Knowledge-Base &mdash; Fundamentals of Web Design, Semester 2, 2026
+    </p>
+  </header>
+
+  <!-- ==================== NAVIGATION ====================
+       VIVA NOTE: This EXACT same <nav> block appears on ALL 5 pages.
+       This means users can navigate to any page from any page —
+       satisfying the "No Dead Ends" requirement.
+       The class="active" is applied to the CURRENT PAGE's link.
+  -->
+  <nav>
+    <a href="index.html"              >&#127968; Home</a>
+    <a href="planets.html" class="active">&#127765; Planets</a>
+    <a href="exploration.html"        >&#128640; Exploration</a>
+    <a href="gallery.html"            >&#128248; Gallery</a>
+    <a href="feedback.html"           >&#128172; Feedback</a>
+  </nav>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+
+    <!-- h1 on THIS page is the page-level title -->
+    <h1>The Eight Planets</h1>
+
+    <p class="page-intro">
+      A comprehensive overview and comparison of the eight planets of our Solar System,
+      from rocky Mercury to the icy giant Neptune.
+    </p>
+
+    <!-- ==================== SECTION: Planet Comparison Table ====================
+         VIVA NOTE: This section fulfils the TABLE requirement.
+         A table is used here because we have structured, comparative data
+         in rows and columns — the ideal use-case for <table>.
+    -->
+    <section id="planet-table">
+
+      <h2>Planetary Comparison Table</h2>
+
+      <p>
+        The table below compares key statistics for all eight planets. Data is arranged
+        from <em>closest to farthest</em> from the Sun.
+      </p>
+
+      <!--
+        VIVA NOTE — TABLE STRUCTURE:
+        <table>  — the whole table
+        <thead>  — header section (column titles, visually distinct)
+        <tbody>  — data section (the actual rows of information)
+        <tr>     — Table Row (one row of cells)
+        <th>     — Table Header cell (bold, used for column/row titles)
+        <td>     — Table Data cell (regular data content)
+        border-collapse: collapse (in CSS) merges cell borders into one line.
+      -->
+      <div class="table-wrapper">
+        <table>
+
+          <!-- thead: groups the header row(s) -->
+          <thead>
+            <tr>
+              <!-- <th> cells in thead act as column titles -->
+              <th>#</th>
+              <th>Planet</th>
+              <th>Type</th>
+              <th>Diameter (km)</th>
+              <th>Distance from Sun (AU)</th>
+              <th>Orbital Period (Earth years)</th>
+              <th>Moons</th>
+              <th>Notable Feature</th>
+            </tr>
+          </thead>
+
+          <!-- tbody: groups the data rows -->
+          <tbody>
+
+            <!-- Each <tr> is one row; each <td> is one cell in that row -->
+            <tr>
+              <td>1</td>
+              <td><strong>Mercury</strong></td>
+              <td>Terrestrial</td>
+              <td>4,879</td>
+              <td>0.39</td>
+              <td>0.24</td>
+              <td>0</td>
+              <td>Extreme temperature swings</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td><strong>Venus</strong></td>
+              <td>Terrestrial</td>
+              <td>12,104</td>
+              <td>0.72</td>
+              <td>0.62</td>
+              <td>0</td>
+              <td>Hottest planet (462°C avg)</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td><strong>Earth</strong></td>
+              <td>Terrestrial</td>
+              <td>12,742</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1</td>
+              <td>Only planet known to harbour life</td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td><strong>Mars</strong></td>
+              <td>Terrestrial</td>
+              <td>6,779</td>
+              <td>1.52</td>
+              <td>1.88</td>
+              <td>2</td>
+              <td>Tallest volcano in Solar System</td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td><strong>Jupiter</strong></td>
+              <td>Gas Giant</td>
+              <td>139,820</td>
+              <td>5.20</td>
+              <td>11.86</td>
+              <td>95</td>
+              <td>Great Red Spot (500-year storm)</td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+              <td><strong>Saturn</strong></td>
+              <td>Gas Giant</td>
+              <td>116,460</td>
+              <td>9.58</td>
+              <td>29.46</td>
+              <td>146</td>
+              <td>Spectacular ring system</td>
+            </tr>
+
+            <tr>
+              <td>7</td>
+              <td><strong>Uranus</strong></td>
+              <td>Ice Giant</td>
+              <td>50,724</td>
+              <td>19.22</td>
+              <td>84.01</td>
+              <td>28</td>
+              <td>Rotates on its side (98° tilt)</td>
+            </tr>
+
+            <tr>
+              <td>8</td>
+              <td><strong>Neptune</strong></td>
+              <td>Ice Giant</td>
+              <td>49,244</td>
+              <td>30.05</td>
+              <td>164.80</td>
+              <td>16</td>
+              <td>Fastest winds (2,100 km/h)</td>
+            </tr>
+
+          </tbody>
+          <!-- VIVA NOTE: AU = Astronomical Unit = average Earth–Sun distance (149.6 million km) -->
+        </table>
+      </div>
+
+      <p class="img-caption">
+        Table 1: Comparative data for all eight planets. AU = Astronomical Unit.
+        Data sourced from NASA Planetary Fact Sheets.
+      </p>
+
+    </section>
+    <!-- ==================== END TABLE SECTION ==================== -->
+
+
+    <!-- ==================== SECTION: Inner Planets ==================== -->
+    <section id="inner-planets">
+
+      <h2>Inner Planets — The Terrestrial Four</h2>
+
+      <p>
+        The four inner planets &mdash; <strong>Mercury, Venus, Earth, and Mars</strong>
+        &mdash; are called <em>terrestrial</em> planets because they have solid, rocky
+        surfaces, similar to Earth (Latin: <em>terra</em>, meaning land).
+      </p>
+
+      <!-- Image 2 -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Solar-System.pdf/page1-1200px-Solar-System.pdf.jpg"
+        alt="Size comparison of the four inner rocky planets of the Solar System"
+        class="img-block"
+        onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg'; this.alt='Image unavailable';"
+      >
+
+      <!-- h3: sub-section heading under h2 -->
+      <h3>Key Characteristics</h3>
+
+      <!-- h5 and h6 used here to fulfil the heading hierarchy requirement -->
+      <h5>Composition</h5>
+      <p>
+        All four are composed primarily of <strong>silicate rock and metals</strong>,
+        with relatively thin atmospheres compared to the outer giants.
+      </p>
+
+      <h6>Fun Sub-fact</h6>
+      <p>
+        Earth and Venus are often called <em>"twin planets"</em> because they are
+        similar in size and mass — yet Venus is uninhabitable while Earth thrives with life.
+      </p>
+
+    </section>
+
+
+    <!-- ==================== SECTION: Outer Planets ==================== -->
+    <section id="outer-planets">
+
+      <h2>Outer Planets — Gas &amp; Ice Giants</h2>
+
+      <p>
+        Beyond the asteroid belt lie the four <strong>giant planets</strong>.
+        <em>Jupiter</em> and <em>Saturn</em> are gas giants — enormous balls of
+        hydrogen and helium. <em>Uranus</em> and <em>Neptune</em> are ice giants
+        with large amounts of water, ammonia, and methane ices.
+      </p>
+
+      <div class="highlight-box">
+        <strong>Did you know?</strong> Jupiter is so massive that it has
+        <em>more mass than all other planets combined</em>, multiplied by
+        <strong>twice</strong>.
+      </div>
+
+    </section>
+
+  </main>
+  <!-- ==================== END MAIN ==================== -->
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>
+      <strong>The Solar System Mini-Wiki</strong> &mdash;
+      Created for FWD Assignment 1 &middot; Semester 2, 2026
+    </p>
+    <p>
+      Content sourced from <a href="https://en.wikipedia.org" target="_blank">Wikipedia</a>.
+      HTML structure written by student.
+    </p>
+  </footer>
+
+</body>
+</html>

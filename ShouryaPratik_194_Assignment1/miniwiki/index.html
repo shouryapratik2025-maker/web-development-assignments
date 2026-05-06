@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--
+  DOCTYPE declaration:
+  VIVA NOTE: <!DOCTYPE html> tells the browser this is an HTML5 document.
+  It is NOT a tag — it's an instruction to the browser.
+  Always the very first line of every HTML file.
+-->
+
+<!-- <html lang="en"> — root element, lang helps screen readers and search engines -->
+<html lang="en">
+
+<head>
+  <!--
+    <head> contains METADATA — information ABOUT the page, not visible content.
+    VIVA NOTE: <meta>, <title>, <link> all go inside <head>.
+  -->
+
+  <!-- charset: tells browser to use UTF-8 encoding (supports all characters) -->
+  <meta charset="UTF-8">
+
+  <!-- viewport: makes the page responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <title>: shown in the browser tab and bookmarks -->
+  <title>The Solar System | Home</title>
+
+  <!-- <link rel="stylesheet">: links an external CSS file to this HTML page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--
+    <body> contains ALL visible content of the webpage.
+    VIVA NOTE: Everything the user sees (text, images, forms) lives here.
+  -->
+
+  <!-- ==================== HEADER ====================
+       VIVA NOTE: <header> is a semantic tag. It holds the site
+       branding — the name and tagline of the entire website.
+  -->
+  <header>
+    <!-- <h1> is used only ONCE per page — for the most important heading -->
+    <h1 class="site-title">&#9733; The Solar System</h1>
+    <p class="site-subtitle">
+      A Student Knowledge-Base &mdash; Fundamentals of Web Design, Semester 2, 2026
+    </p>
+  </header>
+
+  <!-- ==================== NAVIGATION ====================
+       VIVA NOTE: <nav> groups all the main navigation links.
+       Every page has the SAME <nav> so users can always jump anywhere.
+       This eliminates dead ends — no "Back button" needed.
+  -->
+  <nav>
+    <a href="index.html"       class="active">&#127968; Home</a>
+    <a href="planets.html"              >&#127765; Planets</a>
+    <a href="exploration.html"          >&#128640; Exploration</a>
+    <a href="gallery.html"              >&#128248; Gallery</a>
+    <a href="feedback.html"             >&#128172; Feedback</a>
+  </nav>
+
+  <!-- ==================== MAIN CONTENT ====================
+       VIVA NOTE: <main> wraps the primary content unique to this page.
+       There is only ONE <main> element per HTML document.
+  -->
+  <main>
+
+    <!-- Page intro paragraph (outside sections) -->
+    <p class="page-intro">
+      Welcome to the <strong>Solar System Mini-Wiki</strong> — your guide to the Sun,
+      its eight planets, and humanity's greatest journeys into space.
+    </p>
+
+    <!-- ==================== SECTION 1: What is the Solar System? ====================
+         VIVA NOTE: <section> groups related content. It should always have a heading.
+         Use multiple <section> tags to divide a page into logical parts.
+    -->
+    <section id="overview">
+
+      <!-- h2 = major section heading, one level below h1 -->
+      <h2>What is the Solar System?</h2>
+
+      <!--
+        <p> = paragraph of text
+        <strong> = bold + semantically "important"  (not just visual)
+        <em>     = italic + semantically "emphasized" (not just visual)
+      -->
+      <p>
+        The <strong>Solar System</strong> is the gravitationally bound system of the
+        <em>Sun</em> and the objects that orbit it. It formed approximately
+        <strong>4.6 billion years ago</strong> from the gravitational collapse of a giant
+        interstellar molecular cloud.
+      </p>
+
+      <p>
+        At its centre lies the <strong>Sun</strong>, a G-type main-sequence star that
+        accounts for <em>99.86%</em> of the total mass of the Solar System. The remaining
+        mass consists of eight planets, their moons, dwarf planets, asteroids, comets,
+        and interplanetary dust.
+      </p>
+
+      <!-- Image 1 -->
+      <!-- VIVA NOTE: src = file path, alt = text if image fails OR for screen readers -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Planets2013.svg/1200px-Planets2013.svg.png"
+        alt="Diagram showing the eight planets of the Solar System in order from the Sun"
+        class="img-block"
+      >
+      <p class="img-caption">
+        Fig 1: The eight planets of the Solar System, to scale. (Source: Wikimedia Commons)
+      </p>
+
+      <!-- highlight-box uses a utility CSS class for a styled callout -->
+      <div class="highlight-box">
+        <strong>Key Fact:</strong> Light from the Sun takes approximately
+        <em>8 minutes and 20 seconds</em> to reach Earth, travelling at 299,792 km/s.
+      </div>
+
+    </section>
+    <!-- ==================== END SECTION 1 ==================== -->
+
+
+    <!-- ==================== SECTION 2: The Eight Planets ====================
+         VIVA NOTE: A new <section> starts a new logical topic.
+         Here we use an Unordered List <ul> for the planets because
+         their order is spatial (distance), not a ranked sequence.
+         Note: <ol> (Ordered List) is used on the exploration.html page.
+    -->
+    <section id="planets-overview">
+
+      <h2>The Eight Planets</h2>
+
+      <p>
+        The Solar System contains <strong>eight officially recognised planets</strong>,
+        divided into two groups:
+      </p>
+
+      <!-- h3 = sub-heading inside a section -->
+      <h3>Inner (Terrestrial) Planets</h3>
+      <p>Rocky, small, and close to the Sun:</p>
+
+      <!-- UNORDERED LIST: items have no numbered sequence, just bullet points -->
+      <!-- VIVA NOTE: <ul> = unordered list, <li> = list item -->
+      <ul>
+        <li><strong>Mercury</strong> — Closest to the Sun; <em>no atmosphere</em>.</li>
+        <li><strong>Venus</strong>  — Hottest planet; thick CO&#8322; atmosphere.</li>
+        <li><strong>Earth</strong>  — Only known planet to harbour life.</li>
+        <li><strong>Mars</strong>   — The &ldquo;Red Planet&rdquo;; home of Olympus Mons, the tallest volcano.</li>
+      </ul>
+
+      <h3>Outer (Gas/Ice Giant) Planets</h3>
+      <p>Massive, gaseous, and far from the Sun:</p>
+
+      <ul>
+        <li><strong>Jupiter</strong> — Largest planet; famous for its <em>Great Red Spot</em>.</li>
+        <li><strong>Saturn</strong>  — Distinguished by its <em>stunning ring system</em>.</li>
+        <li><strong>Uranus</strong>  — Rotates on its side; an ice giant.</li>
+        <li><strong>Neptune</strong> — Farthest planet; has the fastest winds in the Solar System.</li>
+      </ul>
+
+    </section>
+    <!-- ==================== END SECTION 2 ==================== -->
+
+
+    <!-- ==================== SECTION 3: The Sun ====================
+         VIVA NOTE: Heading hierarchy demonstration.
+         h2 > h3 > h4 — each level is one step deeper in the outline.
+    -->
+    <section id="the-sun">
+
+      <h2>The Sun — Heart of the Solar System</h2>
+
+      <p>
+        The <strong>Sun</strong> is a nearly perfect sphere of hot plasma, internally
+        convecting with energy produced by <em>nuclear fusion</em> of hydrogen into helium
+        in its core.
+      </p>
+
+      <!-- h4 = heading two levels below h2 (demonstrates heading hierarchy) -->
+      <h4>Core Physical Properties</h4>
+
+      <div class="info-box">
+        <p>
+          Diameter: <strong>1,392,700 km</strong> (about 109&times; Earth's diameter)<br>
+          Surface Temperature: <strong>5,778 K</strong><br>
+          Age: <strong>~4.603 billion years</strong><br>
+          Spectral Class: <strong>G2V</strong> (Yellow Dwarf)
+        </p>
+      </div>
+
+    </section>
+    <!-- ==================== END SECTION 3 ==================== -->
+
+
+    <!-- ==================== SECTION 4: Explore Further ==================== -->
+    <section id="explore">
+
+      <h2>Explore This Wiki</h2>
+
+      <p>Use the navigation above — or the quick links below — to explore each topic:</p>
+
+      <ul>
+        <li>
+          <a href="planets.html">&#127765; Planets</a>
+          — Detailed data table comparing all eight planets.
+        </li>
+        <li>
+          <a href="exploration.html">&#128640; Space Exploration</a>
+          — A timeline of humanity's most important missions.
+        </li>
+        <li>
+          <a href="gallery.html">&#128248; Gallery &amp; Facts</a>
+          — Images and fascinating facts about our Solar System.
+        </li>
+        <li>
+          <a href="feedback.html">&#128172; Feedback</a>
+          — Share your thoughts about this wiki.
+        </li>
+      </ul>
+
+    </section>
+    <!-- ==================== END SECTION 4 ==================== -->
+
+  </main>
+  <!-- ==================== END MAIN ==================== -->
+
+
+  <!-- ==================== FOOTER ====================
+       VIVA NOTE: <footer> is a semantic element. It typically contains
+       copyright notices, author info, or links to related pages.
+       It appears at the BOTTOM of every page.
+  -->
+  <footer>
+    <p>
+      <strong>The Solar System Mini-Wiki</strong> &mdash;
+      Created for FWD Assignment 1 &middot; Semester 2, 2026
+    </p>
+    <p>
+      Content sourced from <a href="https://en.wikipedia.org" target="_blank">Wikipedia</a>.
+      HTML structure written by student.
+    </p>
+  </footer>
+
+</body>
+</html>

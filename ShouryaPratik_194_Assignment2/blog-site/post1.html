@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Rise of Generative AI — TechMuse</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="post-hero">
+    <div class="container">
+      <div class="card-meta" style="margin-bottom:12px;">
+        <span class="tag">AI</span>
+      </div>
+      <h1>The Rise of Generative AI: What You Need to Know</h1>
+      <div class="post-meta">
+        <span>&#128100; Alex Kumar</span>
+        <span>&#128197; May 1, 2025</span>
+        <span>&#128337; 6 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-content animate-in">
+      <img src= "images/pic7.jpg" alt="Artificial Intelligence network visualization"/>
+
+      <p>
+        Artificial intelligence has been a buzzword for decades, but something changed around 2022.
+        A new category of AI — <strong>generative AI</strong> — became powerful enough to write essays,
+        generate photorealistic images, compose music, and write working code. Suddenly, AI wasn't just
+        a tool for recommendations or spam filters. It was a creative collaborator.
+      </p>
+
+      <h2>What Exactly Is Generative AI?</h2>
+      <p>
+        Traditional AI systems are designed to classify or predict. A spam filter learns what spam looks
+        like and flags it. A recommendation algorithm predicts what movie you'll enjoy next. These are
+        discriminative models — they learn to distinguish between categories.
+      </p>
+      <p>
+        Generative AI is different. It learns the underlying patterns in data and uses them to
+        <em>create new content</em>. Given the patterns of millions of sentences, it can write new ones.
+        Given millions of images, it can generate new ones that never existed before.
+      </p>
+
+      <blockquote>
+        "Generative AI doesn't just recognize patterns — it creates from them. That's the fundamental shift."
+      </blockquote>
+
+      <h2>The Models Behind the Magic</h2>
+      <p>
+        The most prominent generative AI models today are <strong>Large Language Models (LLMs)</strong>
+        like GPT-4, Claude, and Gemini for text, and diffusion models like Stable Diffusion and DALL-E
+        for images. These models are trained on enormous datasets — sometimes spanning a significant
+        portion of the public internet — and contain billions of parameters (internal weights) that
+        encode everything they've learned.
+      </p>
+
+      <h2>Real-World Applications</h2>
+      <p>Generative AI is already being used in:</p>
+      <ul>
+        <li><strong>Healthcare:</strong> Drug discovery, medical imaging analysis, patient report summarization</li>
+        <li><strong>Education:</strong> Personalized tutoring, automated feedback on writing</li>
+        <li><strong>Software development:</strong> Code completion, bug detection, documentation generation</li>
+        <li><strong>Creative industries:</strong> Script writing assistance, concept art, music composition</li>
+        <li><strong>Customer service:</strong> Intelligent chatbots that handle complex queries</li>
+      </ul>
+
+      <h2>The Concerns We Shouldn't Ignore</h2>
+      <p>
+        No technology this powerful comes without risks. Generative AI raises serious concerns around
+        misinformation (AI-generated fake news and deepfakes), intellectual property (was the training
+        data used legally?), job displacement, and over-reliance. These are not hypothetical — they're
+        active debates in boardrooms, legislatures, and classrooms right now.
+      </p>
+
+      <h2>What Should You Do?</h2>
+      <p>
+        Whether you're a student, a professional, or just a curious person, the best thing you can do
+        is learn how these tools work at a basic level. You don't need to understand the math — but
+        understanding that AI outputs are probabilistic, not factual by default, will help you use
+        these tools wisely and critically.
+      </p>
+
+      <div style="margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border-color); display:flex; gap:12px;">
+        <a href="blog.html" class="btn" style="background:#e8f4fd; color:var(--accent-color);">&#8592; Back to Blog</a>
+        <a href="post2.html" class="btn">Next Post &#8594;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechMuse</h4>
+          <p style="color:#a0afc0; font-size:0.88rem;">CS106 Web Design Assignment Blog.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  </script>
+</body>
+</html>

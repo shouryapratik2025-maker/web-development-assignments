@@ -1,0 +1,655 @@
+/* =====================================================
+   style.css — Moodle-like Course Page
+   Author: First Year Student
+   Description: Layout, styling, and responsive design
+   ===================================================== */
+
+
+/* ---- 1. CSS RESET & GLOBAL BASE ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Padding included in element width */
+}
+
+/* CSS Custom Properties (variables) — change once, updates everywhere */
+:root {
+  --primary:      #1a73e8;   /* Main blue (Moodle-inspired) */
+  --primary-dark: #1557b0;
+  --primary-light:#e8f0fe;
+  --accent:       #fbbc04;   /* Yellow accent */
+  --success:      #1e8e3e;   /* Green for success states */
+  --danger:       #d93025;   /* Red for alerts */
+  --bg-page:      #f0f4f8;   /* Light grey page background */
+  --bg-white:     #ffffff;
+  --text-dark:    #202124;
+  --text-mid:     #3c4043;
+  --text-light:   #5f6368;
+  --border:       #dadce0;
+  --shadow:       0 2px 10px rgba(0,0,0,0.09);
+  --radius:       10px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.65;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ---- 2. HEADER ---- */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 18px 32px;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* Push left & right apart */
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 2.4rem;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.college-name {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.student-badge {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+/* ---- 3. NAVIGATION BAR ---- */
+nav {
+  background-color: var(--primary-dark);
+  position: sticky;
+  top: 0;
+  z-index: 200;        /* Stays above other content */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li a {
+  display: block;
+  color: rgba(255,255,255,0.80);
+  padding: 15px 22px;
+  font-size: 0.90rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
+/* Active link — class applied by JavaScript setActive() */
+.nav-links li a.active {
+  background: var(--primary);
+  color: white;
+  border-bottom: 3px solid var(--accent);
+}
+
+
+/* ---- 4. TWO-COLUMN LAYOUT ---- */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 0 16px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;   /* Sidebar doesn't stretch full height */
+}
+
+
+/* ---- 5. SIDEBAR ---- */
+.sidebar {
+  flex: 0 0 260px;    /* Fixed width — does not grow or shrink */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+/* Course info list — removes bullet points */
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+}
+
+.info-list li strong {
+  color: var(--text-dark);
+}
+
+/* Quick links list */
+.quick-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quick-links li a {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--primary);
+  padding: 7px 10px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.quick-links li a:hover {
+  background: var(--primary-light);
+}
+
+
+/* ---- 6. MAIN CONTENT AREA ---- */
+.main-content {
+  flex: 1;           /* Takes all remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Common section card style */
+.content-section {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.content-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+
+/* ---- 7. ANNOUNCEMENTS ---- */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.section-header h2 {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Toggle button */
+.toggle-btn {
+  padding: 7px 18px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.toggle-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Individual announcement cards */
+.announcement-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-left: 4px solid var(--primary);
+  background: var(--primary-light);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 14px;
+}
+
+.announcement-card:last-child {
+  margin-bottom: 0;
+}
+
+.ann-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ann-body h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.ann-date {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.ann-body p {
+  font-size: 0.87rem;
+  color: var(--text-mid);
+}
+
+
+/* ---- 8. ASSIGNMENTS ---- */
+.assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.assignment-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  background: #fafafa;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.assignment-card:hover {
+  box-shadow: 0 4px 14px rgba(26,115,232,0.13);
+  transform: translateY(-2px);
+}
+
+/* Large assignment number badge */
+.asgn-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.asgn-body {
+  flex: 1;
+}
+
+.asgn-body h4 {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.asgn-body p {
+  font-size: 0.84rem;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.due-date {
+  font-size: 0.82rem !important;
+  color: var(--danger) !important;
+  font-weight: 500;
+}
+
+/* Submit button on each assignment */
+.submit-btn {
+  padding: 9px 22px;
+  background: var(--success);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.submit-btn:hover {
+  background: #145e2e;
+  transform: scale(1.04);
+}
+
+
+/* ---- 9. RESOURCES ---- */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.resource-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 18px;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.resource-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(26,115,232,0.12);
+  transform: translateY(-3px);
+}
+
+.res-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.resource-card h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.resource-card p {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.res-link {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: color 0.15s;
+}
+
+.res-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+
+/* ---- 10. FOOTER ---- */
+footer {
+  background: var(--text-dark);
+  color: #9aa0a6;
+  text-align: center;
+  padding: 24px 20px;
+  margin-top: 20px;
+}
+
+.footer-inner p {
+  font-size: 0.84rem;
+  line-height: 2;
+}
+
+
+/* =============================================
+   11. RESPONSIVE DESIGN — Media Queries
+   ============================================= */
+
+/* TABLET: 900px and below — sidebar stacks below main content */
+@media (max-width: 900px) {
+  .page-wrapper {
+    flex-direction: column;   /* Stack sidebar and main vertically */
+  }
+
+  .sidebar {
+    flex: none;
+    width: 100%;              /* Full width on tablet */
+  }
+}
+
+/* MOBILE: 640px and below — hamburger nav, smaller fonts */
+@media (max-width: 640px) {
+  header {
+    padding: 14px 16px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Show hamburger, hide nav links by default */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;            /* Hidden until toggled */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Class added by JavaScript when hamburger is clicked */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .page-wrapper {
+    margin: 14px auto;
+    padding: 0 10px;
+  }
+
+  .content-section {
+    padding: 18px;
+  }
+
+  /* Stack assignment cards vertically on very small screens */
+  .assignment-card {
+    flex-wrap: wrap;
+  }
+
+  .asgn-right {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+
+/*=======css=======*/
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

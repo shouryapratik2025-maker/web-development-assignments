@@ -1,0 +1,474 @@
+/* ============================================================
+   style.css — Shared Stylesheet for the Solar System Mini-Wiki
+   VIVA NOTE: A single external CSS file keeps all pages looking
+   consistent. Every HTML page links to this using <link rel="stylesheet">.
+   ============================================================ */
+
+/* --- Google Fonts Import ---
+   VIVA NOTE: We import two fonts from Google Fonts:
+   'Playfair Display' for headings (elegant, editorial look)
+   'Source Serif 4' for body text (readable, like a real encyclopedia)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+/* --- CSS Custom Properties (Variables) ---
+   VIVA NOTE: CSS variables (--variable-name) let us define colors once
+   and reuse them everywhere. If we change --accent, it updates site-wide.
+*/
+:root {
+  --bg-dark:      #0a0e1a;   /* Deep space navy — main background        */
+  --bg-card:      #111827;   /* Slightly lighter for cards/sections       */
+  --bg-nav:       #070b14;   /* Near-black for navigation bar             */
+  --accent:       #f5c842;   /* Gold/yellow — star-like accent color      */
+  --accent-dim:   #c9a227;   /* Dimmer gold for hover states              */
+  --text-primary: #e8e6df;   /* Warm off-white for main text              */
+  --text-muted:   #8a9ab5;   /* Muted blue-grey for secondary text        */
+  --border:       #1e2d45;   /* Subtle border color                       */
+  --link:         #7eb8f7;   /* Sky-blue for hyperlinks                   */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+}
+
+/* --- CSS Reset & Base Styles ---
+   VIVA NOTE: box-sizing: border-box makes width/height calculations
+   include padding and border, which prevents overflow surprises.
+*/
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }   /* VIVA: Smooth scrolling for anchor links */
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   HEADER  (<header> tag)
+   VIVA NOTE: <header> is a semantic HTML5 element. It typically
+   holds the site logo, site name, and a brief tagline.
+   It is NOT the same as <head> (which holds metadata, not content).
+   ============================================================ */
+header {
+  background: linear-gradient(135deg, #070b14 0%, #0d1f3c 60%, #0a1628 100%);
+  border-bottom: 2px solid var(--accent);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative star-field dots behind the header */
+header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20%  30%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80%  20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50%  70%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10%  80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90%  60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35%  15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70%  85%, rgba(255,255,255,0.3) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.site-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+.site-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-style: italic;
+  position: relative;
+}
+
+/* ============================================================
+   NAVIGATION  (<nav> tag)
+   VIVA NOTE: <nav> is a semantic element that wraps the main
+   navigation links of a website. Screen readers and search
+   engines use it to understand site structure.
+   ============================================================ */
+nav {
+  background-color: var(--bg-nav);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  position: sticky;     /* VIVA: sticky nav stays visible when scrolling */
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ============================================================
+   MAIN CONTENT  (<main> tag)
+   VIVA NOTE: <main> contains the dominant content of the page.
+   There should be only ONE <main> element per page.
+   ============================================================ */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+/* ============================================================
+   SECTIONS  (<section> tag)
+   VIVA NOTE: <section> groups related content together under
+   a common theme. It usually has a heading inside it.
+   ============================================================ */
+section {
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-child { border-bottom: none; }
+
+/* ============================================================
+   HEADINGS  (<h1> to <h6>)
+   VIVA NOTE: Headings create a visual AND semantic hierarchy.
+   h1 = page title (only one per page), h2 = major section,
+   h3 = sub-section, h4-h6 = deeper sub-levels.
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 1rem; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem);   font-weight: 700; margin-bottom: 0.8rem; color: var(--accent); }
+h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.6rem; }
+h4 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-muted); }
+h5 { font-size: 1rem;    font-weight: 700; margin-bottom: 0.3rem; color: var(--link); }
+h6 { font-size: 0.9rem;  font-weight: 700; margin-bottom: 0.3rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ============================================================
+   PARAGRAPHS, BOLD & ITALIC  (<p>, <strong>, <em>)
+   VIVA NOTE:
+   <p>       = a paragraph of text
+   <strong>  = important text — bold by default, also semantic
+   <em>      = emphasized text — italic by default, also semantic
+   ============================================================ */
+p {
+  margin-bottom: 1.1rem;
+  color: var(--text-primary);
+}
+
+strong { color: var(--accent); font-weight: 700; }
+em     { color: #a8c8f0; font-style: italic; }
+
+/* ============================================================
+   LISTS  (<ul>, <ol>, <li>)
+   VIVA NOTE:
+   <ul> = Unordered List — bullet points, for items with no order
+   <ol> = Ordered List  — numbered,       for items in sequence
+   <li> = List Item (used inside both ul and ol)
+   ============================================================ */
+ul, ol {
+  padding-left: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+ul li::marker { color: var(--accent); }
+ol li::marker { color: var(--accent); font-weight: 700; }
+
+/* ============================================================
+   IMAGES  (<img> tag)
+   VIVA NOTE: <img src="..." alt="...">
+   src  = path to the image file
+   alt  = text description shown if image fails to load,
+          and read by screen readers for accessibility.
+   Always include alt text — it's an accessibility requirement.
+   ============================================================ */
+.img-block {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin: 1.2rem 0;
+  display: block;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.img-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  margin-top: -0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.img-grid figure {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.img-grid figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.img-grid figure figcaption {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ============================================================
+   TABLE  (<table>, <thead>, <tbody>, <tr>, <th>, <td>)
+   VIVA NOTE:
+   <table>  = container for the whole table
+   <thead>  = table header section (column titles)
+   <tbody>  = table body section (data rows)
+   <tr>     = Table Row
+   <th>     = Table Header cell (bold, centered by default)
+   <td>     = Table Data cell (regular data)
+   ============================================================ */
+.table-wrapper {
+  overflow-x: auto;          /* horizontal scroll on small screens */
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;  /* VIVA: removes double borders between cells */
+  background: var(--bg-card);
+  font-size: 0.95rem;
+}
+
+thead tr {
+  background: linear-gradient(90deg, #0d2045, #142952);
+  border-bottom: 2px solid var(--accent);
+}
+
+thead th {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+tbody tr:hover { background: rgba(245, 200, 66, 0.05); }
+
+tbody td {
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+
+/* ============================================================
+   FORM  (<form>, <input>, <label>, <textarea>, <button>)
+   VIVA NOTE: The <form> element groups all inputs together.
+   action = where to send the data (server URL)
+   method = "get" (data in URL) or "post" (data in body)
+   <label> links to an input via the 'for' + 'id' matching.
+   ============================================================ */
+.form-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  max-width: 640px;
+  margin: 1.5rem auto;
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-family: var(--font-heading);
+}
+
+/* Text and email inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  background: #0d1525;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.65rem 0.9rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Radio and Checkbox groups */
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+  color: var(--text-primary);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--accent);   /* VIVA: colors the radio/checkbox in modern browsers */
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;         /* VIVA: users can resize vertically but not horizontally */
+  min-height: 120px;
+}
+
+/* Submit button */
+.btn-submit {
+  background: var(--accent);
+  color: #0a0e1a;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover  { background: var(--accent-dim); }
+.btn-submit:active { transform: scale(0.98); }
+
+/* ============================================================
+   FOOTER  (<footer> tag)
+   VIVA NOTE: <footer> contains closing info — credits, copyright,
+   secondary links. Like <header>, it is a semantic element.
+   It appears at the very bottom of every page.
+   ============================================================ */
+footer {
+  background-color: var(--bg-nav);
+  border-top: 2px solid var(--border);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+footer a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+footer strong { color: var(--accent); font-weight: 600; }
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.info-box {
+  background: rgba(126, 184, 247, 0.07);
+  border-left: 4px solid var(--link);
+  padding: 1rem 1.2rem;
+  border-radius: 0 4px 4px 0;
+  margin: 1.2rem 0;
+}
+
+.highlight-box {
+  background: rgba(245, 200, 66, 0.07);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.2rem;
+  border-radius: 0 4px 4px 0;
+  margin: 1.2rem 0;
+}
+
+.page-intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+a { color: var(--link); }
+a:hover { color: var(--accent); }

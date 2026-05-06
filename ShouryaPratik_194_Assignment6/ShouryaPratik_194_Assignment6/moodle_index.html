@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and responsive viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodle Course Page</title>
+
+  <!-- Link to external CSS file (must be in same folder) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts for nicer typography -->
+  <!--<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />-->
+</head>
+
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <!-- Contains the course title and college/student name -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <span class="logo">📚</span>
+        <div>
+          <h1>Introduction to Computing</h1>
+          <p class="college-name">Greenfield University &nbsp;|&nbsp; Faculty of Computing</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="student-badge">👤 Ali Hassan (Student)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== NAVIGATION BAR ========== -->
+  <!-- Sticky top nav with 4 links; hamburger shown on mobile -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <!-- Hamburger button for mobile screens -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">&#9776;</button>
+
+      <ul class="nav-links" id="navLinks">
+        <!-- onclick calls setActive(this) in script.js to highlight the clicked link -->
+        <li><a href="#home"          onclick="setActive(this)">🏠 Home</a></li>
+        <li><a href="#announcements" onclick="setActive(this)">📢 Announcements</a></li>
+        <li><a href="#assignments"   onclick="setActive(this)">📝 Assignments</a></li>
+        <li><a href="#resources"     onclick="setActive(this)">📁 Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN CONTENT WRAPPER ========== -->
+  <!-- Two-column layout: sidebar + main area -->
+  <div class="page-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <!-- Course Info Box -->
+      <div class="sidebar-card" id="home">
+        <h3>📋 Course Info</h3>
+        <ul class="info-list">
+          <li><strong>Course:</strong> Introduction to Computing</li>
+          <li><strong>Code:</strong> CS-101</li>
+          <li><strong>Instructor:</strong> Dr. Sarah Ali</li>
+          <li><strong>Semester:</strong> Fall 2025</li>
+          <li><strong>Credits:</strong> 3</li>
+          <li><strong>Room:</strong> Lab 4, Block B</li>
+        </ul>
+      </div>
+
+      <!-- Quick Links Box -->
+      <div class="sidebar-card">
+        <h3>🔗 Quick Links</h3>
+        <ul class="quick-links">
+          <li><a href="#">📄 Course Outline</a></li>
+          <li><a href="#">📅 Class Schedule</a></li>
+          <li><a href="#">📊 Grade Book</a></li>
+          <li><a href="#">💬 Discussion Forum</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT AREA ===== -->
+    <main class="main-content">
+
+      <!-- ---- ANNOUNCEMENTS SECTION ---- -->
+      <section id="announcements" class="content-section">
+        <div class="section-header">
+          <h2>📢 Announcements</h2>
+          <!-- Button calls toggleAnnouncements() in script.js -->
+          <button class="toggle-btn" id="toggleBtn" onclick="toggleAnnouncements()">
+            Hide Announcements
+          </button>
+        </div>
+
+        <!-- This div is shown/hidden by JavaScript -->
+        <div id="announcementList">
+
+          <!-- Announcement 1 -->
+          <div class="announcement-card">
+            <div class="ann-icon">📌</div>
+            <div class="ann-body">
+              <h4>Mid-Term Exam Schedule Released</h4>
+              <p class="ann-date">Posted: November 10, 2025</p>
+              <p>The mid-term examination will be held on <strong>November 25, 2025</strong> in Hall A. Please bring your student ID card. The exam covers Chapters 1 to 6.</p>
+            </div>
+          </div>
+
+          <!-- Announcement 2 -->
+          <div class="announcement-card">
+            <div class="ann-icon">📌</div>
+            <div class="ann-body">
+              <h4>Lab Session Rescheduled</h4>
+              <p class="ann-date">Posted: November 8, 2025</p>
+              <p>This week's Friday lab session has been moved to <strong>Saturday, November 15</strong> at 10:00 AM due to a public holiday. Attendance is mandatory.</p>
+            </div>
+          </div>
+
+          <!-- Announcement 3 -->
+          <div class="announcement-card">
+            <div class="ann-icon">📌</div>
+            <div class="ann-body">
+              <h4>Guest Lecture on Cybersecurity</h4>
+              <p class="ann-date">Posted: November 5, 2025</p>
+              <p>A guest lecture will be conducted by <strong>Mr. Tariq Mehmood</strong> (Senior Cybersecurity Analyst) on November 20, 2025. All students are encouraged to attend.</p>
+            </div>
+          </div>
+
+        </div><!-- end announcementList -->
+      </section>
+
+      <!-- ---- ASSIGNMENTS SECTION ---- -->
+      <section id="assignments" class="content-section">
+        <h2>📝 Assignments</h2>
+
+        <div class="assignment-list">
+
+          <!-- Assignment 1 -->
+          <div class="assignment-card">
+            <div class="asgn-left">
+              <span class="asgn-number">01</span>
+            </div>
+            <div class="asgn-body">
+              <h4>HTML Basics – Build a Personal Profile Page</h4>
+              <p>Create a simple HTML webpage that includes a heading, paragraph, image, and a list of your hobbies.</p>
+              <p class="due-date">📅 Due Date: <strong>November 15, 2025</strong></p>
+            </div>
+            <div class="asgn-right">
+              <!-- Calls submitAssignment() to show a confirmation alert -->
+              <button class="submit-btn" onclick="submitAssignment('Assignment 1')">Submit</button>
+            </div>
+          </div>
+
+          <!-- Assignment 2 -->
+          <div class="assignment-card">
+            <div class="asgn-left">
+              <span class="asgn-number">02</span>
+            </div>
+            <div class="asgn-body">
+              <h4>CSS Styling – Style Your Profile Page</h4>
+              <p>Apply CSS to your Assignment 1 page. Add colors, fonts, margins, padding, and a hover effect on at least one element.</p>
+              <p class="due-date">📅 Due Date: <strong>November 22, 2025</strong></p>
+            </div>
+            <div class="asgn-right">
+              <button class="submit-btn" onclick="submitAssignment('Assignment 2')">Submit</button>
+            </div>
+          </div>
+
+          <!-- Assignment 3 -->
+          <div class="assignment-card">
+            <div class="asgn-left">
+              <span class="asgn-number">03</span>
+            </div>
+            <div class="asgn-body">
+              <h4>JavaScript Interactivity – Course Selection Page</h4>
+              <p>Build a course selection portal using HTML, CSS, and JavaScript that allows a student to select a course and display it on screen.</p>
+              <p class="due-date">📅 Due Date: <strong>December 1, 2025</strong></p>
+            </div>
+            <div class="asgn-right">
+              <button class="submit-btn" onclick="submitAssignment('Assignment 3')">Submit</button>
+            </div>
+          </div>
+
+          <!-- Assignment 4 -->
+          <div class="assignment-card">
+            <div class="asgn-left">
+              <span class="asgn-number">04</span>
+            </div>
+            <div class="asgn-body">
+              <h4>Moodle Page – Responsive Course Dashboard</h4>
+              <p>Design a Moodle-inspired course page with navigation, announcements, assignments, and resources using HTML, CSS, and JavaScript.</p>
+              <p class="due-date">📅 Due Date: <strong>December 10, 2025</strong></p>
+            </div>
+            <div class="asgn-right">
+              <button class="submit-btn" onclick="submitAssignment('Assignment 4')">Submit</button>
+            </div>
+          </div>
+
+        </div><!-- end assignment-list -->
+      </section>
+
+      <!-- ---- RESOURCES SECTION ---- -->
+      <section id="resources" class="content-section">
+        <h2>📁 Resources</h2>
+
+        <div class="resource-grid">
+
+          <!-- Resource 1 -->
+          <div class="resource-card">
+            <span class="res-icon">🌐</span>
+            <h4>MDN Web Docs</h4>
+            <p>Official documentation for HTML, CSS, and JavaScript — the best reference for web developers.</p>
+            <a href="https://developer.mozilla.org" target="_blank" class="res-link">Visit Site →</a>
+          </div>
+
+          <!-- Resource 2 -->
+          <div class="resource-card">
+            <span class="res-icon">🎓</span>
+            <h4>W3Schools</h4>
+            <p>Beginner-friendly tutorials and interactive examples for HTML, CSS, JavaScript, and more.</p>
+            <a href="https://www.w3schools.com" target="_blank" class="res-link">Visit Site →</a>
+          </div>
+
+          <!-- Resource 3 -->
+          <div class="resource-card">
+            <span class="res-icon">📄</span>
+            <h4>Lecture Slides – Week 1-5</h4>
+            <p>Download the compiled lecture slides covering the first five weeks of the course.</p>
+            <a href="#" class="res-link" onclick="downloadAlert('Lecture Slides')">Download PDF →</a>
+          </div>
+
+          <!-- Resource 4 -->
+          <div class="resource-card">
+            <span class="res-icon">📝</span>
+            <h4>Past Papers</h4>
+            <p>Practice with past mid-term and final exam papers to prepare for your examinations.</p>
+            <a href="#" class="res-link" onclick="downloadAlert('Past Papers')">Download PDF →</a>
+          </div>
+
+        </div><!-- end resource-grid -->
+      </section>
+
+    </main><!-- end main-content -->
+  </div><!-- end page-wrapper -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2025 Greenfield University — All Rights Reserved</p>
+      <p>📧 Contact: computing@greenfield.edu &nbsp;|&nbsp; 📞 +1 (800) 555-0199</p>
+    </div>
+  </footer>
+
+  <!-- Link to external JavaScript file (placed BEFORE closing body tag) -->
+  <script src="script.js"></script>
+
+</body>
+</html>

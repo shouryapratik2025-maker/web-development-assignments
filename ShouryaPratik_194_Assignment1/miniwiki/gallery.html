@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Solar System | Gallery &amp; Facts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <h1 class="site-title">&#9733; The Solar System</h1>
+    <p class="site-subtitle">
+      A Student Knowledge-Base &mdash; Fundamentals of Web Design, Semester 2, 2026
+    </p>
+  </header>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav>
+    <a href="index.html"              >&#127968; Home</a>
+    <a href="planets.html"            >&#127765; Planets</a>
+    <a href="exploration.html"        >&#128640; Exploration</a>
+    <a href="gallery.html" class="active">&#128248; Gallery</a>
+    <a href="feedback.html"           >&#128172; Feedback</a>
+  </nav>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+
+    <h1>Gallery &amp; Amazing Facts</h1>
+
+    <p class="page-intro">
+      Stunning images and fascinating facts about the Solar System — from the Sun's
+      corona to the icy plains of Pluto.
+    </p>
+
+
+    <!-- ==================== SECTION: Image Gallery ====================
+         VIVA NOTE: This section fulfils the IMAGE requirement.
+         At least 3 images are required. Each <img> has:
+         - src="..."  → path to the image
+         - alt="..."  → description (for accessibility & if image fails)
+         - class="..."→ for CSS styling
+         <figure> and <figcaption> are semantic HTML5 tags for images with captions.
+    -->
+    <section id="gallery">
+
+      <h2>Solar System Gallery</h2>
+
+      <p>
+        The images below — sourced from <strong>NASA</strong> and
+        <em>Wikimedia Commons</em> — showcase the incredible diversity of our
+        Solar System.
+      </p>
+
+      <!--
+        VIVA NOTE: <figure> is a semantic HTML5 element that wraps an image
+        (or diagram, code block, etc.) together with its caption.
+        <figcaption> provides the visible caption for the figure.
+        This is more semantic than just using <img> + <p>.
+      -->
+
+      <!-- IMAGE GRID using CSS Grid (defined in style.css) -->
+      <div class="img-grid">
+
+        <!-- Image 1: The Sun -->
+        <figure>
+          <img
+            src="images/sun.jfif"
+            alt="The Sun photographed by NASA's Solar Dynamics Observatory in ultraviolet light"
+            width="800"
+            height="800"
+          >
+          <!--
+            VIVA NOTE: width and height attributes help the browser reserve
+            space for the image before it loads (prevents layout shift).
+          -->
+          <figcaption>
+            <strong>The Sun</strong> — photographed by NASA's Solar Dynamics Observatory.
+          </figcaption>
+        </figure>
+
+        <!-- Image 2: Saturn -->
+        <figure>
+          <img
+            src="images/saturn.jfif"
+            alt="Saturn and its iconic ring system photographed by the Cassini spacecraft"
+            width="800"
+            height="600"
+          >
+          <figcaption>
+            <strong>Saturn</strong> — and its iconic rings, captured by the
+            <em>Cassini spacecraft</em>.
+          </figcaption>
+        </figure>
+
+        <!-- Image 3: Mars -->
+        <figure>
+          <img
+            src="images/mars.jfif"
+            alt="Mars, the Red Planet, photographed by the ESA Rosetta spacecraft"
+            width="800"
+            height="800"
+          >
+          <figcaption>
+            <strong>Mars</strong> — the Red Planet, photographed by ESA's
+            <em>Rosetta spacecraft</em>.
+          </figcaption>
+        </figure>
+
+        <!-- Image 4: Jupiter (bonus 4th image) -->
+        <figure>
+          <img
+            src="images/Jupiter.jfif"
+            alt="Jupiter showing its Great Red Spot storm, photographed by the Hubble Space Telescope"
+            width="800"
+            height="800"
+          >
+          <figcaption>
+            <strong>Jupiter</strong> and its Great Red Spot — imaged by the
+            <em>Hubble Space Telescope</em>.
+          </figcaption>
+        </figure>
+
+      </div>
+      <!-- ==================== END IMAGE GRID ==================== -->
+
+    </section>
+    <!-- ==================== END GALLERY SECTION ==================== -->
+
+
+    <!-- ==================== SECTION: Amazing Facts ====================
+         VIVA NOTE: h5 and h6 are used here to demonstrate the full
+         heading hierarchy (h1 through h6) across the website.
+    -->
+    <section id="facts">
+
+      <h2>10 Amazing Solar System Facts</h2>
+
+      <p>
+        Here are <strong>ten fascinating facts</strong> about our Solar System, drawn
+        from decades of scientific research:
+      </p>
+
+      <!-- An unordered list of facts -->
+      <ul>
+        <li>
+          The Solar System is estimated to be <strong>4.568 billion years old</strong>,
+          about one-third the age of the Universe itself.
+        </li>
+        <li>
+          The Sun contains <strong>99.86%</strong> of all the mass in the Solar System.
+        </li>
+        <li>
+          Jupiter's moon <em>Ganymede</em> is larger than the planet Mercury.
+        </li>
+        <li>
+          A day on <strong>Venus</strong> (243 Earth days) is longer than its year
+          (225 Earth days) — it rotates more slowly than it orbits the Sun.
+        </li>
+        <li>
+          Saturn is <em>less dense than water</em> — it would float if you put it in
+          a bathtub large enough.
+        </li>
+        <li>
+          The <strong>asteroid belt</strong> between Mars and Jupiter contains
+          millions of rocky objects, but its total mass is less than 4% of the Moon's.
+        </li>
+        <li>
+          Pluto was reclassified as a <em>dwarf planet</em> by the International
+          Astronomical Union (IAU) in <strong>2006</strong>.
+        </li>
+        <li>
+          <strong>Olympus Mons</strong> on Mars is the tallest volcano in the Solar System,
+          standing about <em>21.9 km high</em> — nearly 3× the height of Mount Everest.
+        </li>
+        <li>
+          The <em>Voyager 1 probe</em>, launched in 1977, entered interstellar space in
+          <strong>2012</strong>, becoming the first human-made object to leave the Solar System.
+        </li>
+        <li>
+          There may be a hypothetical <strong>Planet Nine</strong> — a large undetected planet
+          in the far outer Solar System, suggested by anomalies in the orbits of distant objects.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- ==================== SECTION: Heading Hierarchy Demo ====================
+         VIVA NOTE: This section explicitly demonstrates h3 through h6
+         so the full hierarchy is shown in one place.
+    -->
+    <section id="heading-demo">
+
+      <h2>Layers of the Sun</h2>
+      <p>The Sun has several distinct structural layers:</p>
+
+      <h3>Interior Layers</h3>
+      <p>
+        The Sun's interior, invisible from outside, generates all of its energy
+        through nuclear fusion.
+      </p>
+
+      <h4>The Core</h4>
+      <p>
+        The innermost region, where temperatures reach <strong>15 million °C</strong>
+        and hydrogen fuses into helium, releasing enormous energy.
+      </p>
+
+      <h5>Radiative Zone</h5>
+      <p>
+        Energy travels outward through this layer as <em>electromagnetic radiation</em>,
+        taking up to <strong>100,000 years</strong> to cross it.
+      </p>
+
+      <h6>Convective Zone</h6>
+      <p>
+        Hot plasma rises, cools, and sinks back down in convection currents,
+        transferring energy toward the surface.
+      </p>
+
+      <h3>Outer Layers</h3>
+
+      <h4>Photosphere</h4>
+      <p>
+        The visible surface of the Sun, at approximately <strong>5,778 K</strong>.
+        Sunspots — cooler, dark regions — form here.
+      </p>
+
+      <h5>Chromosphere</h5>
+      <p>
+        A reddish layer above the photosphere, visible during solar eclipses.
+        Solar flares originate here.
+      </p>
+
+      <h6>Corona</h6>
+      <p>
+        The outermost layer — a scorching plasma halo reaching temperatures of
+        <em>over 1 million K</em>. It is the source of the solar wind.
+      </p>
+
+    </section>
+
+  </main>
+  <!-- ==================== END MAIN ==================== -->
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>
+      <strong>The Solar System Mini-Wiki</strong> &mdash;
+      Created for FWD Assignment 1 &middot; Semester 2, 2026
+    </p>
+    <p>
+      Content sourced from <a href="https://en.wikipedia.org" target="_blank">Wikipedia</a>.
+      HTML structure written by student.
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechMuse Blog — Contact</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Contact Me</h1>
+      <p>Have a question, suggestion, or collaboration idea? I'd love to hear from you.</p>
+    </div>
+  </header>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <main>
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper animate-in">
+
+          <!-- Info column -->
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>
+              Whether you want to suggest a topic, report an error, ask a question,
+              or just say hi — fill out the form and I'll respond within 48 hours.
+            </p>
+            <p style="margin-top:1.5em;"><strong>Email:</strong> alex@techmuse.dev</p>
+            <p><strong>Location:</strong> New Delhi, India</p>
+            <p><strong>Response Time:</strong> Within 2 business days</p>
+          </div>
+
+          <!-- Contact form — ID selector -->
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <h3 style="margin-bottom:1.4em;">Send a Message</h3>
+
+            <!-- Name field -->
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <!-- Attribute selector targets input[type="text"] in CSS -->
+              <input type="text" id="name" name="name" placeholder="Your full name" required/>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+            </div>
+
+            <!-- Subject field -->
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?"/>
+            </div>
+
+            <!-- Message textarea -->
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn">Send Message &#8594;</button>
+            </div>
+
+            <!-- Success message (hidden by default) -->
+            <div id="success-msg" style="display:none; margin-top:1em; padding:14px 18px; background:#d4edda; border:1px solid #c3e6cb; border-radius:var(--radius); color:#155724; font-family:var(--font-ui); font-size:0.95rem;">
+              &#10003; Thank you! Your message has been sent. I'll be in touch soon.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechMuse</h4>
+          <p style="color:#a0afc0; font-size:0.88rem;">A student project blog for CS106.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('success-msg').style.display = 'block';
+      e.target.reset();
+      window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 80, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

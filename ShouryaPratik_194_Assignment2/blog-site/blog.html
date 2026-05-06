@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechMuse Blog — All Posts</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <div class="container">
+      <h1>All Blog Posts</h1>
+      <p>Thoughts, tutorials, and opinions on technology and design.</p>
+    </div>
+  </header>
+
+  <!-- ===== ALL POSTS GRID ===== -->
+  <main>
+    <section class="section-pad" style="padding-top:0;">
+      <div class="container">
+        <div class="blog-grid">
+
+          <article class="blog-card">
+            <img src="images/pic2.jpg" alt="AI concept"/>
+            <div class="card-body">
+              <div class="card-meta"><span class="tag">AI</span><span>May 1, 2025</span></div>
+              <h3>The Rise of Generative AI: What You Need to Know</h3>
+              <p>Generative AI is reshaping every industry from healthcare to entertainment. Here's what it means for you.</p>
+              <a href="post1.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="images/pic3.jpg" alt="Web dev workspace"/>
+            <div class="card-body">
+              <div class="card-meta"><span class="tag">Web Dev</span><span>Apr 22, 2025</span></div>
+              <h3>CSS Grid vs Flexbox: When to Use Which?</h3>
+              <p>Two powerful layout tools — we break down the key differences with real-world examples.</p>
+              <a href="post2.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="images/pic4.jpg" alt="Cloud computing"/>
+            <div class="card-body">
+              <div class="card-meta"><span class="tag">Cloud</span><span>Apr 14, 2025</span></div>
+              <h3>Understanding Cloud Computing in Plain English</h3>
+              <p>No jargon, no fluff. How cloud computing actually works and why companies love it.</p>
+              <a href="post3.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="images/pic5.jpg" alt="Cybersecurity"/>
+            <div class="card-body">
+              <div class="card-meta"><span class="tag">Security</span><span>Apr 5, 2025</span></div>
+              <h3>5 Cybersecurity Habits Everyone Should Practice</h3>
+              <p>Simple, actionable habits to protect your digital life from common threats.</p>
+              <a href="post4.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="images/pic6.jpg" alt="Mobile app"/>
+            <div class="card-body">
+              <div class="card-meta"><span class="tag">Mobile</span><span>Mar 28, 2025</span></div>
+              <h3>Building Your First Mobile App: A Beginner's Roadmap</h3>
+              <p>From choosing a framework to publishing — a clear step-by-step guide for beginners.</p>
+              <a href="post5.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+        </div><!-- .blog-grid -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechMuse</h4>
+          <p style="color:#a0afc0; font-size:0.88rem;">A student project blog for CS106.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

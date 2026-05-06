@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Selection Portal</title>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+ <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />-->
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">🎓 EduPortal</div>
+      <h1>Course Selection Portal</h1>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav>
+    <div class="nav-inner">
+      <!-- Hamburger button shown only on mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / HOME SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h2>Welcome, Student!</h2>
+      <p>Browse our available courses and select the one that matches your passion. Your learning journey starts here.</p>
+    </div>
+  </section>
+
+  <!-- ===== COURSES SECTION ===== -->
+  <section id="courses" class="courses-section">
+    <h2 class="section-title">Available Courses</h2>
+    <p class="section-subtitle">Click "Select Course" on any card to choose it.</p>
+
+    <div class="course-grid">
+
+      <!-- Course Card 1 -->
+      <div class="course-card" data-course="Web Development" data-code="CS101" data-instructor="Dr. Ayesha Khan">
+        <div class="card-badge">CS101</div>
+        <div class="card-icon">🌐</div>
+        <h3 class="course-name">Web Development</h3>
+        <p class="course-desc">Learn HTML, CSS, and JavaScript to build beautiful, responsive websites from scratch.</p>
+        <p class="course-instructor">👩‍🏫 Dr. Ayesha Khan &nbsp;|&nbsp; <span>Computer Science Dept.</span></p>
+        <button class="select-btn" onclick="selectCourse(this)">Select Course</button>
+      </div>
+
+      <!-- Course Card 2 -->
+      <div class="course-card" data-course="Data Structures" data-code="CS201" data-instructor="Prof. Bilal Ahmed">
+        <div class="card-badge">CS201</div>
+        <div class="card-icon">🗂️</div>
+        <h3 class="course-name">Data Structures</h3>
+        <p class="course-desc">Understand arrays, linked lists, stacks, queues, trees, and graphs used in programming.</p>
+        <p class="course-instructor">👨‍🏫 Prof. Bilal Ahmed &nbsp;|&nbsp; <span>Computer Science Dept.</span></p>
+        <button class="select-btn" onclick="selectCourse(this)">Select Course</button>
+      </div>
+
+      <!-- Course Card 3 -->
+      <div class="course-card" data-course="Digital Marketing" data-code="MK301" data-instructor="Ms. Sana Raza">
+        <div class="card-badge">MK301</div>
+        <div class="card-icon">📣</div>
+        <h3 class="course-name">Digital Marketing</h3>
+        <p class="course-desc">Master SEO, social media, email campaigns, and online advertising strategies.</p>
+        <p class="course-instructor">👩‍🏫 Ms. Sana Raza &nbsp;|&nbsp; <span>Marketing Dept.</span></p>
+        <button class="select-btn" onclick="selectCourse(this)">Select Course</button>
+      </div>
+
+      <!-- Course Card 4 -->
+      <div class="course-card" data-course="Introduction to AI" data-code="AI401" data-instructor="Dr. Umar Farooq">
+        <div class="card-badge">AI401</div>
+        <div class="card-icon">🤖</div>
+        <h3 class="course-name">Introduction to AI</h3>
+        <p class="course-desc">Explore machine learning, neural networks, and the basics of artificial intelligence.</p>
+        <p class="course-instructor">👨‍🏫 Dr. Umar Farooq &nbsp;|&nbsp; <span>AI & Data Science Dept.</span></p>
+        <button class="select-btn" onclick="selectCourse(this)">Select Course</button>
+      </div>
+
+    </div><!-- end course-grid -->
+  </section>
+
+  <!-- ===== SELECTED COURSE DISPLAY ===== -->
+  <!-- This section is hidden by default and shown by JavaScript -->
+  <section id="selection-result" class="result-section" style="display: none;">
+    <div class="result-box">
+      <h2>✅ Course Selected!</h2>
+      <p>You have successfully selected:</p>
+      <div class="result-details">
+        <p><strong>Course Name:</strong> <span id="res-name"></span></p>
+        <p><strong>Course Code:</strong> <span id="res-code"></span></p>
+        <p><strong>Instructor:</strong> <span id="res-instructor"></span></p>
+      </div>
+      <button class="cancel-btn" onclick="cancelSelection()">Cancel Selection</button>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <h2 class="section-title">About EduPortal</h2>
+    <p>EduPortal is a student-friendly course registration platform designed to make it easy for learners to explore and enroll in courses. Our platform offers a wide variety of subjects taught by expert faculty members.</p>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-info">
+      <p>📧 Email: <a href="mailto:info@eduportal.edu">info@eduportal.edu</a></p>
+      <p>📞 Phone: +1 (800) 123-4567</p>
+      <p>📍 Address: 123 University Avenue, Knowledge City</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 EduPortal. All Rights Reserved. | Fundamentals of Web Development Assignment</p>
+  </footer>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+
+</body>
+</html>

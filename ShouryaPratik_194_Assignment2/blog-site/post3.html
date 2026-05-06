@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Computing Explained — TechMuse</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="post-hero">
+    <div class="container">
+      <div class="card-meta" style="margin-bottom:12px;"><span class="tag">Cloud</span></div>
+      <h1>Understanding Cloud Computing in Plain English</h1>
+      <div class="post-meta">
+        <span>&#128100; Alex Kumar</span>
+        <span>&#128197; Apr 14, 2025</span>
+        <span>&#128337; 5 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-content animate-in">
+      <img src="images/pic9.jpg" alt="Cloud computing servers"/>
+
+      <p>
+        "It's in the cloud" — you've heard it dozens of times. But what does it actually mean?
+        Cloud computing sounds abstract, but the concept is surprisingly straightforward once you
+        strip away the marketing language.
+      </p>
+
+      <h2>The Simple Definition</h2>
+      <p>
+        Cloud computing means using computers, storage, and software <em>owned by someone else</em>,
+        accessed over the internet, instead of running everything locally on your own hardware.
+        Instead of buying a powerful server and putting it in your office, you rent time on
+        Amazon's, Google's, or Microsoft's massive data centres.
+      </p>
+
+      <h2>Three Service Models</h2>
+      <p>Cloud services come in three main forms:</p>
+      <ul>
+        <li><strong>IaaS (Infrastructure as a Service):</strong> Raw computing power, storage, and networking. Example: Amazon EC2.</li>
+        <li><strong>PaaS (Platform as a Service):</strong> A ready-to-use development environment. Example: Google App Engine.</li>
+        <li><strong>SaaS (Software as a Service):</strong> Full applications delivered over the web. Example: Gmail, Dropbox, Notion.</li>
+      </ul>
+
+      <h2>Why Businesses Love the Cloud</h2>
+      <p>
+        The cloud offers massive advantages: you only pay for what you use (no wasted hardware),
+        you can scale up in minutes instead of months, your data is backed up automatically, and
+        your team can access systems from anywhere in the world.
+      </p>
+
+      <blockquote>
+        "The cloud didn't change what companies do — it changed how fast and cheaply they can do it."
+      </blockquote>
+
+      <h2>Common Misconceptions</h2>
+      <p>
+        "The cloud is someone else's computer" is a meme, but it's also mostly true. The key insight
+        is that the abstraction layer above that computer — the elasticity, the managed services, the
+        global distribution — is what actually makes cloud computing transformative, not just the
+        fact that servers exist somewhere.
+      </p>
+
+      <div style="margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border-color); display:flex; gap:12px;">
+        <a href="post2.html" class="btn" style="background:#e8f4fd; color:var(--accent-color);">&#8592; Previous Post</a>
+        <a href="post4.html" class="btn">Next Post &#8594;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>TechMuse</h4><p style="color:#a0afc0; font-size:0.88rem;">CS106 Blog Assignment.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p></div>
+    </div>
+  </footer>
+  <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }</script>
+</body>
+</html>

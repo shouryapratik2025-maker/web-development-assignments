@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechMuse Blog — Home</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header class="hero">
+    <div class="container animate-in">
+      <h1>Welcome to TechMuse</h1>
+      <p>Exploring the intersection of technology, creativity, and everyday life. Fresh ideas, honest opinions.</p>
+      <a href="blog.html" class="btn">Read the Blog</a>
+    </div>
+  </header>
+
+  <!-- ===== LATEST POSTS SECTION ===== -->
+  <main>
+    <section class="section-pad">
+      <div class="container">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="blog-grid">
+
+          <!-- Card 1 -->
+          <article class="blog-card">
+            <img src="https://picsum.photos/seed/ai/600/300" alt="Artificial Intelligence illustration"/>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">AI</span>
+                <span>May 1, 2025</span>
+              </div>
+              <h3>The Rise of Generative AI: What You Need to Know</h3>
+              <p>Generative AI is reshaping every industry from healthcare to entertainment. Here's a clear beginner-friendly breakdown of what's happening and why it matters.</p>
+              <a href="post1.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="blog-card">
+            <img src="https://picsum.photos/seed/webdev/600/300" alt="Web development workspace"/>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Web Dev</span>
+                <span>Apr 22, 2025</span>
+              </div>
+              <h3>CSS Grid vs Flexbox: When to Use Which?</h3>
+              <p>Two powerful layout tools, but which one should you reach for first? We break down the key differences with practical, real-world examples.</p>
+              <a href="post2.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="blog-card">
+            <img src="https://picsum.photos/seed/cloud/600/300" alt="Cloud computing visualization"/>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Cloud</span>
+                <span>Apr 14, 2025</span>
+              </div>
+              <h3>Understanding Cloud Computing in Plain English</h3>
+              <p>No jargon, no fluff. This post explains how cloud computing actually works, why companies love it, and what it means for regular users.</p>
+              <a href="post3.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="blog-card">
+            <img src="https://picsum.photos/seed/cyber/600/300" alt="Cybersecurity lock icon"/>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Security</span>
+                <span>Apr 5, 2025</span>
+              </div>
+              <h3>5 Cybersecurity Habits Everyone Should Practice</h3>
+              <p>From strong passwords to two-factor authentication — simple, actionable habits that can protect your digital life from common threats.</p>
+              <a href="post4.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="blog-card">
+            <img src="https://picsum.photos/seed/mobile/600/300" alt="Mobile app on smartphone"/>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Mobile</span>
+                <span>Mar 28, 2025</span>
+              </div>
+              <h3>Building Your First Mobile App: A Beginner's Roadmap</h3>
+              <p>Thinking about making an app? This step-by-step guide covers everything from choosing a framework to publishing on the App Store and Play Store.</p>
+              <a href="post5.html" class="btn">Read More</a>
+            </div>
+          </article>
+
+        </div><!-- .blog-grid -->
+
+        <div class="text-center mt-3">
+          <a href="blog.html" class="btn">View All Posts</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechMuse</h4>
+          <p style="color:#a0afc0; font-size:0.88rem;">A student project blog covering technology, design, and digital culture.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <a href="#">Artificial Intelligence</a>
+          <a href="#">Web Development</a>
+          <a href="#">Cybersecurity</a>
+          <a href="#">Cloud Computing</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

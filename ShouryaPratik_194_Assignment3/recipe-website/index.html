@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delicious Recipes - Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">🍴 Delicious<span>Recipes</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="recipe1.html">Pasta</a></li>
+        <li><a href="recipe2.html">Pancakes</a></li>
+        <li><a href="recipe3.html">Salad</a></li>
+        <li><a href="recipe4.html">Biryani</a></li>
+        <li><a href="recipe5.html">Brownies</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to Delicious Recipes 🍽️</h1>
+    <p>Discover easy, tasty, and home-style recipes made with love. From quick snacks to full meals — we have it all!</p>
+    <a href="#featured" class="hero-btn">Browse Recipes ↓</a>
+  </section>
+
+  <!-- SEARCH BAR (UI Only) -->
+  <div class="search-section">
+    <div class="search-bar">
+      <input type="text" placeholder="Search for a recipe..." />
+      <button>🔍 Search</button>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-emoji">👨‍🍳</div>
+    <div class="intro-text">
+      <h2>Cook with Confidence</h2>
+      <p>Whether you are a beginner or an experienced home cook, our recipes are designed to be simple, clear, and absolutely delicious.</p>
+      <p>Each recipe comes with step-by-step instructions, ingredients, preparation time, and difficulty level so you always know what to expect.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories-section">
+    <div class="inner">
+      <div class="section-header">
+        <h2 class="section-title">Browse by Category</h2>
+        <p class="section-subtitle">Find exactly what you are craving today</p>
+      </div>
+      <div class="categories-grid">
+        <button class="category-btn active">🥗 All</button>
+        <button class="category-btn">🥦 Veg</button>
+        <button class="category-btn">🍗 Non-Veg</button>
+        <button class="category-btn">🍰 Desserts</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED RECIPES -->
+  <section class="recipes-section" id="featured">
+    <div class="section-header">
+      <h2 class="section-title">Featured Recipes</h2>
+      <p class="section-subtitle">Hand-picked recipes just for you</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Card 1 -->
+      <div class="recipe-card">
+        <div class="card-img">🍝</div>
+        <div class="card-body">
+          <h3>Creamy Garlic Pasta</h3>
+          <p>A rich and creamy pasta dish made with garlic butter sauce — perfect for weeknight dinners.</p>
+          <div class="card-meta">
+            <span class="badge">Easy</span>
+            <span class="badge">⏱ 20 min</span>
+            <span class="badge">🥦 Veg</span>
+          </div>
+          <a href="recipe1.html" class="card-link">View Recipe →</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="recipe-card">
+        <div class="card-img">🥞</div>
+        <div class="card-body">
+          <h3>Fluffy Pancakes</h3>
+          <p>Golden, fluffy pancakes that are crispy on the outside and soft on the inside. Great for breakfast!</p>
+          <div class="card-meta">
+            <span class="badge">Easy</span>
+            <span class="badge">⏱ 15 min</span>
+            <span class="badge">🥦 Veg</span>
+          </div>
+          <a href="recipe2.html" class="card-link">View Recipe →</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="recipe-card">
+        <div class="card-img">🥗</div>
+        <div class="card-body">
+          <h3>Greek Salad</h3>
+          <p>A fresh and healthy salad loaded with veggies, olives, and feta cheese in a lemon dressing.</p>
+          <div class="card-meta">
+            <span class="badge">Easy</span>
+            <span class="badge">⏱ 10 min</span>
+            <span class="badge">🥦 Veg</span>
+          </div>
+          <a href="recipe3.html" class="card-link">View Recipe →</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="recipe-card">
+        <div class="card-img">🍛</div>
+        <div class="card-body">
+          <h3>Chicken Biryani</h3>
+          <p>Aromatic spiced rice cooked with tender chicken — a classic South Asian favourite dish.</p>
+          <div class="card-meta">
+            <span class="badge medium">Medium</span>
+            <span class="badge">⏱ 60 min</span>
+            <span class="badge">🍗 Non-Veg</span>
+          </div>
+          <a href="recipe4.html" class="card-link">View Recipe →</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="recipe-card">
+        <div class="card-img">🍫</div>
+        <div class="card-body">
+          <h3>Chocolate Brownies</h3>
+          <p>Fudgy, gooey chocolate brownies with a crispy top — the ultimate dessert treat.</p>
+          <div class="card-meta">
+            <span class="badge medium">Medium</span>
+            <span class="badge">⏱ 40 min</span>
+            <span class="badge">🍰 Dessert</span>
+          </div>
+          <a href="recipe5.html" class="card-link">View Recipe →</a>
+        </div>
+      </div>
+
+      <!-- Bonus Card -->
+      <div class="recipe-card">
+        <div class="card-img">💡</div>
+        <div class="card-body">
+          <h3>More Coming Soon!</h3>
+          <p>We are always adding new recipes. Stay tuned for more delicious ideas every week.</p>
+          <div class="card-meta">
+            <span class="badge">Stay tuned</span>
+          </div>
+          <a href="about.html" class="card-link">About Us →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Delicious Recipes</strong> — A Web Development Assignment Project</p>
+    <p>Created by <strong>Your Name</strong> | First Year Web Development</p>
+    <p>© 2024 All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

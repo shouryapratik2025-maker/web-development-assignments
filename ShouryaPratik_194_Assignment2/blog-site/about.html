@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechMuse Blog — About</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <div class="container">
+      <h1>About This Blog</h1>
+      <p>Who we are and why we write about technology.</p>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <main>
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid animate-in">
+          <!-- ID selector used for this image -->
+          <img id="about-image" src="images/pic1.jpg" alt="Blog author portrait"/>
+          <div class="about-text">
+            <h2>Hi, I'm Alex — the author behind TechMuse.</h2>
+            <p>
+              I'm a second-year Computer Science student passionate about making technology
+              understandable for everyone. I started TechMuse as part of my CS106 Web Design
+              course, but it quickly grew into something I genuinely love.
+            </p>
+            <p>
+              My goal is to cut through the noise and explain complex tech topics in plain,
+              honest language — without buzzwords or hype. Whether you're a developer, a
+              curious beginner, or just someone who uses a smartphone, there's something here
+              for you.
+            </p>
+            <p>
+              When I'm not writing or coding, you'll find me hiking, playing chess, or
+              obsessively reading about space exploration.
+            </p>
+            <h3>Skills & Technologies</h3>
+            <ul class="skills-list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>React</li>
+              <li>Git & GitHub</li>
+              <li>Responsive Design</li>
+              <li>UI/UX Basics</li>
+            </ul>
+            <div style="margin-top:1.8em;">
+              <a href="contact.html" class="btn">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission section -->
+    <section style="background:#fff; padding:56px 0; border-top:1px solid var(--border-color);">
+      <div class="container">
+        <h2 class="section-title">What TechMuse Is About</h2>
+        <div style="display:flex; gap:36px; flex-wrap:wrap; margin-top:1.5rem;">
+          <div style="flex:1; min-width:220px; background:var(--bg-color); padding:28px; border-radius:var(--radius); border-left:4px solid var(--accent-color);">
+            <h4>Clarity First</h4>
+            <p style="font-size:0.95rem;">Every post is written to be understood on the first read. No assumed knowledge, no gatekeeping.</p>
+          </div>
+          <div style="flex:1; min-width:220px; background:var(--bg-color); padding:28px; border-radius:var(--radius); border-left:4px solid #27ae60;">
+            <h4>Practical Focus</h4>
+            <p style="font-size:0.95rem;">Tutorials and guides that you can actually apply — not just theory for its own sake.</p>
+          </div>
+          <div style="flex:1; min-width:220px; background:var(--bg-color); padding:28px; border-radius:var(--radius); border-left:4px solid #e67e22;">
+            <h4>Honest Opinions</h4>
+            <p style="font-size:0.95rem;">Reviews and takes that reflect real experience, not sponsored talking points.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechMuse</h4>
+          <p style="color:#a0afc0; font-size:0.88rem;">A student project blog for CS106.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

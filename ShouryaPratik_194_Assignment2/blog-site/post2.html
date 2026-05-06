@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Grid vs Flexbox — TechMuse</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="post-hero">
+    <div class="container">
+      <div class="card-meta" style="margin-bottom:12px;"><span class="tag">Web Dev</span></div>
+      <h1>CSS Grid vs Flexbox: When to Use Which?</h1>
+      <div class="post-meta">
+        <span>&#128100; Alex Kumar</span>
+        <span>&#128197; Apr 22, 2025</span>
+        <span>&#128337; 7 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-content animate-in">
+      <img src="images/pic8.jpg" alt="CSS layout illustration"/>
+
+      <p>
+        CSS has two modern layout systems — <strong>Flexbox</strong> and <strong>CSS Grid</strong> — and
+        developers frequently debate which one to use. The honest answer is: both, in different situations.
+        Understanding when to use each one is a mark of a confident front-end developer.
+      </p>
+
+      <h2>Flexbox: One-Dimensional Layout</h2>
+      <p>
+        Flexbox (Flexible Box Layout) is designed for <em>one-dimensional</em> layouts — meaning it
+        works along a single axis at a time, either horizontal (row) or vertical (column). It's perfect
+        for:
+      </p>
+      <ul>
+        <li>Navigation bars (horizontal list of links)</li>
+        <li>Centering an element both horizontally and vertically</li>
+        <li>Distributing space evenly among items</li>
+        <li>Aligning items of unequal size in a single line</li>
+      </ul>
+
+      <blockquote>
+        "Flexbox is about distributing space along one axis. Grid is about placing things on two axes."
+      </blockquote>
+
+      <h2>CSS Grid: Two-Dimensional Layout</h2>
+      <p>
+        CSS Grid is built for <em>two-dimensional</em> layouts — rows AND columns simultaneously.
+        It excels at:
+      </p>
+      <ul>
+        <li>Page-level layouts (header, sidebar, main, footer)</li>
+        <li>Image galleries with equal-height rows</li>
+        <li>Dashboard layouts with multiple content areas</li>
+        <li>Any layout where you need precise control over both axes</li>
+      </ul>
+
+      <h2>A Simple Rule of Thumb</h2>
+      <p>
+        Ask yourself: <em>"Am I laying things out in a line, or in a grid?"</em> If it's a line
+        (navigation, a row of buttons, a single column of cards), use Flexbox. If it's a
+        structured layout with rows AND columns (a product grid, a dashboard), use Grid.
+      </p>
+      <p>
+        In practice, you'll use both in the same project — and even in the same component.
+        A Grid layout might contain Flex containers inside each grid cell.
+      </p>
+
+      <h2>Quick Comparison</h2>
+      <table style="width:100%; border-collapse:collapse; font-family:var(--font-ui); font-size:0.9rem; margin:1.5em 0;">
+        <thead>
+          <tr style="background:var(--primary-color); color:#fff;">
+            <th style="padding:10px 14px; text-align:left;">Feature</th>
+            <th style="padding:10px 14px; text-align:left;">Flexbox</th>
+            <th style="padding:10px 14px; text-align:left;">CSS Grid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f8f9fa;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Dimensions</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">1D (row or column)</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">2D (rows and columns)</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Best For</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Components, navbars</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Page layouts, grids</td>
+          </tr>
+          <tr style="background:#f8f9fa;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Control</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Content-driven</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border-color);">Layout-driven</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px;">Browser Support</td>
+            <td style="padding:9px 14px;">Excellent (IE 11+)</td>
+            <td style="padding:9px 14px;">Excellent (modern browsers)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Verdict</h2>
+      <p>
+        Don't think of Grid and Flexbox as competitors. They're complementary tools. Master both,
+        and you'll be able to build virtually any layout cleanly and efficiently — without hacks,
+        floats, or positioning tricks.
+      </p>
+
+      <div style="margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border-color); display:flex; gap:12px;">
+        <a href="post1.html" class="btn" style="background:#e8f4fd; color:var(--accent-color);">&#8592; Previous Post</a>
+        <a href="post3.html" class="btn">Next Post &#8594;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>TechMuse</h4><p style="color:#a0afc0; font-size:0.88rem;">CS106 Blog Assignment.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p></div>
+    </div>
+  </footer>
+  <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }</script>
+</body>
+</html>

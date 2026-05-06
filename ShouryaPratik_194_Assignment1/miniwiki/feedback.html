@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Solar System | Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <h1 class="site-title">&#9733; The Solar System</h1>
+    <p class="site-subtitle">
+      A Student Knowledge-Base &mdash; Fundamentals of Web Design, Semester 2, 2026
+    </p>
+  </header>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav>
+    <a href="index.html"               >&#127968; Home</a>
+    <a href="planets.html"             >&#127765; Planets</a>
+    <a href="exploration.html"         >&#128640; Exploration</a>
+    <a href="gallery.html"             >&#128248; Gallery</a>
+    <a href="feedback.html" class="active">&#128172; Feedback</a>
+  </nav>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+
+    <h1>Feedback &amp; Contact Us</h1>
+
+    <p class="page-intro">
+      We value your thoughts! Please fill in the form below to share your
+      feedback about the Solar System Wiki. All fields marked
+      <strong>*</strong> are required.
+    </p>
+
+
+    <!-- ==================== SECTION: Form ====================
+         VIVA NOTE: This entire section fulfils the FORM requirement.
+         Every required input type is included.
+    -->
+    <section id="contact-form">
+
+      <h2>Submit Your Feedback</h2>
+
+      <!--
+        ============================================================
+        <form> ELEMENT
+        VIVA NOTE:
+        - action="#"    → Where to send data when submitted.
+                          "#" means stay on same page (no server).
+                          In real projects, this would be a server URL.
+        - method="post" → How to send data.
+                          "post" = data sent in HTTP request body (secure, for forms)
+                          "get"  = data appended to URL (for searches, not sensitive data)
+        ============================================================
+      -->
+      <form action="#" method="post" class="form-wrapper" novalidate>
+
+        <!-- ======================================================
+             INPUT 1: TEXT INPUT  (<input type="text">)
+             VIVA NOTE:
+             - <label for="name"> links the label to the input via id="name"
+             - Clicking the label focuses the input (accessibility feature)
+             - placeholder= shows hint text inside the field (disappears on typing)
+             - required = browser will NOT submit the form if this is empty
+             - type="text" = single-line text input
+        ====================================================== -->
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="user_name"
+            placeholder="e.g. Priya Sharma"
+            required
+          >
+          <!--
+            VIVA NOTE on 'name' attribute:
+            The 'name' attribute is what gets sent to the server (key=value pair).
+            e.g. user_name=Priya+Sharma
+            It is different from 'id' (which is for CSS/JS targeting).
+          -->
+        </div>
+
+        <!-- ======================================================
+             INPUT 2: EMAIL INPUT  (<input type="email">)
+             VIVA NOTE:
+             - type="email" tells the browser to validate email format (@, domain, etc.)
+             - On mobile, it shows an email keyboard (with @ symbol)
+             - The browser will show an error if the format is invalid
+        ====================================================== -->
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="user_email"
+            placeholder="e.g. priya@example.com"
+            required
+          >
+        </div>
+
+        <!-- ======================================================
+             INPUT 3: RADIO BUTTONS  (<input type="radio">)
+             VIVA NOTE:
+             - Radio buttons let the user choose ONLY ONE option from a group.
+             - All radio buttons in a group must share the SAME 'name' attribute.
+             - This is what makes them mutually exclusive (selecting one deselects others).
+             - The 'value' attribute is what gets sent to the server when selected.
+             - 'checked' = pre-selects a default option.
+        ====================================================== -->
+        <div class="form-group">
+          <label>Was this wiki helpful to you? *</label>
+          <div class="radio-group">
+
+            <label>
+              <input
+                type="radio"
+                name="helpful"
+                value="yes"
+                checked
+              >
+              &#9989; Yes, very helpful!
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="helpful"
+                value="somewhat"
+              >
+              &#128528; Somewhat helpful
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="helpful"
+                value="no"
+              >
+              &#10060; Not helpful
+            </label>
+
+          </div>
+          <!--
+            VIVA NOTE: All three radios share name="helpful" — so only ONE
+            can be selected at a time. If name were different, they'd be
+            independent checkboxes, not a mutually exclusive group.
+          -->
+        </div>
+
+        <!-- ======================================================
+             INPUT 4: CHECKBOX  (<input type="checkbox">)
+             VIVA NOTE:
+             - Checkboxes allow INDEPENDENT yes/no choices.
+             - Unlike radio buttons, multiple checkboxes can be ticked at once.
+             - If unchecked, the field is NOT sent to the server at all.
+             - If checked, it sends: name=value (e.g. subscribe=yes)
+        ====================================================== -->
+        <div class="form-group">
+          <label>Preferences</label>
+          <div class="checkbox-group">
+
+            <label>
+              <input
+                type="checkbox"
+                name="subscribe"
+                value="yes"
+              >
+              &#128139; Subscribe to newsletter about space updates
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="agree_terms"
+                value="agreed"
+              >
+              &#128221; I agree that this information may be used to improve the wiki
+            </label>
+
+          </div>
+        </div>
+
+        <!-- ======================================================
+             INPUT 5: TEXTAREA  (<textarea>)
+             VIVA NOTE:
+             - <textarea> is a multi-line text input (NOT a self-closing tag).
+             - It has a CLOSING TAG: </textarea>
+             - rows="5" suggests the initial height (5 lines visible)
+             - cols is ignored here because we use CSS width: 100%
+             - Users can resize it (set by CSS resize: vertical)
+             - Unlike <input>, content goes between the tags (not in 'value')
+        ====================================================== -->
+        <div class="form-group">
+          <label for="comments">Your Comments &amp; Suggestions *</label>
+          <textarea
+            id="comments"
+            name="user_comments"
+            rows="5"
+            placeholder="Please write your detailed feedback here... What did you like? What could be improved? Which topics would you like to see added?"
+            required
+          ></textarea>
+          <!--
+            VIVA NOTE: The closing </textarea> tag is MANDATORY.
+            Any text between the tags becomes the default content.
+            Here we leave it empty but set placeholder= for hint text.
+          -->
+        </div>
+
+        <!-- ======================================================
+             INPUT 6: SUBMIT BUTTON  (<button type="submit">)
+             VIVA NOTE:
+             - type="submit" triggers the form's action (sends data).
+             - type="button" does NOT submit — it does nothing unless
+               you add a JavaScript click handler.
+             - type="reset" clears all form fields.
+             - <button> is preferred over <input type="submit"> because
+               you can put HTML content (icons, spans) inside <button>.
+        ====================================================== -->
+        <button type="submit" class="btn-submit">
+          &#128640; Submit Feedback
+        </button>
+        <!--
+          VIVA NOTE: When submitted (since action="#"), the page reloads.
+          In a real website, action would point to a PHP/Node.js/Python
+          backend that processes and stores the form data.
+        -->
+
+      </form>
+      <!-- ==================== END FORM ==================== -->
+
+    </section>
+
+
+    <!-- ==================== SECTION: Contact Info ==================== -->
+    <section id="contact-info">
+
+      <h2>Other Ways to Reach Us</h2>
+
+      <h3>Email</h3>
+      <p>
+        You can also contact the project team directly at:
+        <a href="mailto:student@university.edu">
+          <strong>student@university.edu</strong>
+        </a>
+      </p>
+
+      <h3>Course Details</h3>
+      <div class="info-box">
+        <p>
+          <strong>Course:</strong> Fundamentals of Web Design (FWD)<br>
+          <strong>Assignment:</strong> Mini-Wiki Project (Assignment 1)<br>
+          <strong>Instructors:</strong> Prashant Singh, Kundan Kumar Sharma, Anmol Narayan<br>
+          <strong>Semester:</strong> 2nd, 2026
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+  <!-- ==================== END MAIN ==================== -->
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>
+      <strong>The Solar System Mini-Wiki</strong> &mdash;
+      Created for FWD Assignment 1 &middot; Semester 2, 2026
+    </p>
+    <p>
+      Content sourced from <a href="https://en.wikipedia.org" target="_blank">Wikipedia</a>.
+      HTML structure written by student.
+    </p>
+  </footer>
+
+</body>
+</html>

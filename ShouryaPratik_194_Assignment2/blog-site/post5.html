@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Build Your First Mobile App — TechMuse</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span>Muse</span></a>
+      <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="post-hero">
+    <div class="container">
+      <div class="card-meta" style="margin-bottom:12px;"><span class="tag">Mobile</span></div>
+      <h1>Building Your First Mobile App: A Beginner's Roadmap</h1>
+      <div class="post-meta">
+        <span>&#128100; Alex Kumar</span>
+        <span>&#128197; Mar 28, 2025</span>
+        <span>&#128337; 8 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-content animate-in">
+      <img src="images/pic11.jpg" alt="Mobile app development"/>
+
+      <p>
+        Building a mobile app sounds daunting — but with today's frameworks and tools, a motivated
+        beginner can ship a working app in weeks, not years. Here's an honest, step-by-step roadmap
+        to get you started.
+      </p>
+
+      <h2>Step 1: Define Your App Idea Clearly</h2>
+      <p>
+        Before writing a single line of code, write one sentence that explains: <em>what your app
+        does, for whom, and why it's better than alternatives.</em> This forces clarity. If you can't
+        explain the app in a sentence, the idea needs more refinement. Sketch your key screens on
+        paper first — this costs nothing and prevents wasted work later.
+      </p>
+
+      <h2>Step 2: Choose Your Technology Stack</h2>
+      <p>The main choices for beginners are:</p>
+      <ul>
+        <li><strong>React Native</strong> — Write once in JavaScript/React, deploy to both iOS and Android. Large community, good for most apps.</li>
+        <li><strong>Flutter</strong> — Google's framework using the Dart language. Excellent performance and beautiful default widgets.</li>
+        <li><strong>Swift (iOS only)</strong> — Apple's native language. Best performance on iPhone, but only runs on Apple devices.</li>
+        <li><strong>Kotlin (Android only)</strong> — Google's modern language for Android development.</li>
+      </ul>
+      <p>
+        For a first app, <strong>React Native or Flutter</strong> are the most beginner-friendly
+        choices because you can deploy to both platforms from one codebase.
+      </p>
+
+      <blockquote>
+        "Pick one technology, learn it well, and ship something. Don't switch frameworks after every YouTube video."
+      </blockquote>
+
+      <h2>Step 3: Build a Minimum Viable Product (MVP)</h2>
+      <p>
+        Your first version should do ONE thing well. Cut every feature that isn't essential to the
+        core value. This is your MVP. Getting to a working MVP teaches you more than months of
+        planning. Ship it to friends and family, gather real feedback, then iterate.
+      </p>
+
+      <h2>Step 4: Test on Real Devices</h2>
+      <p>
+        Simulators are convenient, but they lie. Always test on a real iPhone and a real Android phone
+        before releasing. Performance, touch targets, and font rendering all feel different on actual
+        hardware. Apple's TestFlight and Google's internal testing track let you distribute to testers
+        before a public launch.
+      </p>
+
+      <h2>Step 5: Publish Your App</h2>
+      <p>
+        Publishing to the App Store requires a paid Apple Developer account ($99/year). Google Play
+        requires a one-time $25 fee. Both stores review your app — Apple's process can take days,
+        Google's is typically faster. Follow their guidelines carefully to avoid rejection.
+      </p>
+
+      <h2>The Most Important Advice</h2>
+      <p>
+        The biggest mistake new developers make is abandoning a project when it gets hard (and it
+        will get hard). The developers who ship apps aren't the most talented — they're the ones
+        who kept going when they hit walls. Every error message is a clue, not a dead end.
+      </p>
+
+      <div style="margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border-color); display:flex; gap:12px;">
+        <a href="post4.html" class="btn" style="background:#e8f4fd; color:var(--accent-color);">&#8592; Previous Post</a>
+        <a href="blog.html" class="btn">All Posts &#8594;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>TechMuse</h4><p style="color:#a0afc0; font-size:0.88rem;">CS106 Blog Assignment.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 TechMuse Blog &mdash; CS106 Web Design Assignment</p></div>
+    </div>
+  </footer>
+  <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }</script>
+</body>
+</html>
